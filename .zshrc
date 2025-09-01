@@ -8,3 +8,6 @@ source "$ZSH_CONFIG_PATH/cd.zsh"
 source "$ZSH_CONFIG_PATH/utils.zsh"
 source "$ZSH_CONFIG_PATH/completions.zsh"
 source "$ZSH_CONFIG_PATH/env.zsh"
+
+# vi mode
+bindkey -v
