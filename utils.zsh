@@ -42,3 +42,15 @@ set zle_bracketed_paste
 autoload -Uz bracketed-paste-magic url-quote-magic
 zle -N bracketed-paste bracketed-paste-magic
 zle -N self-insert url-quote-magic
+
+r() {
+    if [[ "$1" != "new" ]]; then
+        bin/rails "$@" && return 0
+        return 1
+    fi
+
+    [[ -z "$2" ]] && echo "Usage: rails new <app_name>" && return 1
+    rails new "$2" --css=tailwind
+    sed -i '/group :development do/ a\  gem "hotwire-spark"' "$2/Gemfile"
+    cd "$2" && bundle install
+}

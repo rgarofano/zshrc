@@ -1,4 +1,4 @@
-ZSH_CONFIG_PATH="$HOME/.config/zsh"
+ZSH_CONFIG_PATH="$XDG_CONFIG_HOME/zsh"
 
 source "$ZSH_CONFIG_PATH/init.zsh"
 source "$ZSH_CONFIG_PATH/prompt.zsh"
